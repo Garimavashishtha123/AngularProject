@@ -1,0 +1,98 @@
+<div class="name">
+    <h1>Book your Physical Appointment</h1>
+    <p><i>Book your Physical Appointment with our best doctors beforehand.</i></p>
+</div>
+
+<div class="btncontainer" id="go-back"> <!--Go Back Button has started-->
+    <button class="btn btn-info float-end" id="button" type="submit"
+    [routerLink]="['/Booking-list']"
+    routerLinkActive="router-link-active">Edit-Your Booked Appointments</button>
+</div> <!--Go Back Button has ended-->
+
+<div class="row top-row" id="formtable"> <!--top row has started-->
+    <div class="col-12"> <!--col-xs-12 row end-xs-->
+    <form id="form1">
+    <div class="form group row"> <!--First Row has started-->
+        <div class=" col-md-6"> <!--Name Column-->
+            <mat-form-field appearance="outline">
+              <mat-label>Full Name</mat-label>
+              <input type="text" matInput name="name" [(ngModel)]="bk.name" name="name">
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-6"> <!--Phone Column-->
+            <mat-form-field appearance="outline">
+              <mat-label>Mobile Number</mat-label>
+              <input type="text" matInput name="phone" [(ngModel)]="bk.phone" name="phone">
+            </mat-form-field>
+          </div>
+    </div> <!--First Row has ended-->
+
+    <div class="row"> <!--Second Row has started-->
+        <div class="col-md-6"> <!--Email Column-->
+            <mat-form-field appearance="outline">
+              <mat-label>Email</mat-label>
+              <input type="text" matInput name="email" [(ngModel)]="bk.email" name="email">
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-6">  <!--Date Of Birth Column-->
+            <mat-form-field appearance="outline">
+              <mat-label>Date Of Birth</mat-label>
+              <input type="date" matInput id="date" name="date" [(ngModel)]="bk.dob" name="dob">
+            </mat-form-field>
+          </div>
+    </div> <!--Second Row has ended-->
+
+    <div class="row"> <!--Third Row has started-->
+
+          <div class=" col-md-4"> 
+            <mat-form-field appearance="outline">
+              <mat-label>Appointment Date</mat-label>
+              <input matInput [matDatepicker]="picker" [(ngModel)]="bk.appdate" name="appdate">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+
+          <div class=" col-md-4"> <!--Appointment Time-->
+            <mat-form-field appearance="outline">
+              <mat-label>Appointment time</mat-label>
+              <input type="time" matInput [(ngModel)]="bk.apptime" name="apptime">
+            </mat-form-field>
+          </div>
+    
+
+     
+
+         <div class=" col-md-4"> <!--Doctor Name Column-->
+
+        <mat-form-field appearance="outline">
+
+            <mat-label>Choose Doctor:</mat-label>
+
+            <select matNativeControl [(ngModel)]="bk.dname" name="dname">
+
+              <option value="Ashok Patil">Ashok Patil</option>
+
+              <option value="Pramod Bansal">Pramod Bansal</option>
+
+              <option value="Ashok Patil">Shivani Mishra</option>
+
+            </select>
+
+          </mat-form-field>
+         </div>
+        </div> <!--Third Row has ended-->
+
+  <div class="row"  id="addbutton"> <!--Add Button Row-->
+    <div class="col-xs-6">
+        <button mat-raised-button color="primary" (click)="onAdd()">BOOK NOW</button>
+    </div>
+  </div>
+</form>
+<!-- 
+    </div>
+</div> Form has ended-->  
+</div>
+</div>

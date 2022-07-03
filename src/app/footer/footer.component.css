@@ -1,0 +1,20 @@
+#footer{
+    /* padding-top: 9px; */
+    height: 145px;
+  }
+  
+  #second{
+    width: 100%;
+    text-align: center;
+  }
+  #tabledata{
+    width: 100%;
+    text-align: justify;
+    border: 0.1rem;
+    border-style: dotted;
+  }
+  #location{
+    padding-left: 10px;
+  }
+  
+  

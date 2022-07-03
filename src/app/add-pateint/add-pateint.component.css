@@ -1,0 +1,39 @@
+.top-row {
+    padding: 1em 0;
+  }
+  .container{
+    text-align: center;
+  }
+  .mat-form-field {
+    width: 100%;
+  }
+  /* #form{
+    text-align: center;
+  } */
+
+  .btncontainer{
+    padding-right: 50px;
+}
+  
+  .image-container {
+    width: 200px;
+    height: 200px;
+    background-color: #F7f7f7;
+    border: 2px solid #CCC;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  #form{
+    padding-left: 70px;
+    padding-block-end: 20px;
+  }
+
+  #formtable{
+    padding-left: 10em;
+  }
+
+ 
+ 

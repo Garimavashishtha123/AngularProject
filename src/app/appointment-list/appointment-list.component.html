@@ -1,0 +1,83 @@
+<div class="page-header">
+      <h1>Your Booked-Physical Appointments</h1>
+  </div>
+  
+  <div class="container">
+    <div class="row end-xs mt-1">
+      <div class="col-xs-12">
+        <input type="text" class="searh-input" placeholder="Search Appointment" [(ngModel)]="filterString"
+          (keyup)="filterList() ">
+        <a routerLink="/Book-Appointment" mat-raised-button color="primary" class="btn btn-info float-end">Book Appointment</a>
+      </div>
+    </div>
+  
+  <div id="listdetails">
+    <div class="mt-1 mat-elevation-z8">
+      <table mat-table matSort [dataSource]="dataSource" >
+  
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+  
+        <!-- Full Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>  Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+  
+        <!-- Mobile Column -->
+        <ng-container matColumnDef="phone">
+            <th mat-header-cell *matHeaderCellDef> Mobile </th>
+            <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+          </ng-container>
+  
+             <!-- Email Column -->
+             <ng-container matColumnDef="email">
+              <th mat-header-cell *matHeaderCellDef> Email </th>
+              <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+            </ng-container>
+  
+        <!-- Date Of Birth Column -->
+        <ng-container matColumnDef="dob">
+          <th mat-header-cell *matHeaderCellDef> Date Of Birth </th>
+          <td mat-cell *matCellDef="let element"> {{element.dob }} </td>
+        </ng-container>
+  
+         <!-- Appointment date Column -->
+         <ng-container matColumnDef="appdate">
+            <th mat-header-cell *matHeaderCellDef> Appointment date </th>
+            <td mat-cell *matCellDef="let element"> {{element.appdate }} </td>
+          </ng-container>
+
+           <!-- Appointment time Column -->
+        <ng-container matColumnDef="apptime">
+            <th mat-header-cell *matHeaderCellDef> Appointment time </th>
+            <td mat-cell *matCellDef="let element"> {{element.apptime }} </td>
+          </ng-container>
+
+       <!-- Doctor Name Column -->
+       <ng-container matColumnDef="dname">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Doctor Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.dname}} </td>
+      </ng-container>
+
+       <!-- Edit Column -->
+       <ng-container matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef> </th>
+        <td mat-cell *matCellDef="let element">
+         <a [routerLink]="['/Add-Patient', element.id]">
+            <mat-icon color="primary">edit</mat-icon>
+          </a>
+        </td>
+      </ng-container>
+
+        
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+  
+      <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page" z->
+      </mat-paginator>
+    </div>
+  </div>
+  </div>
+  
